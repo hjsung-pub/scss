@@ -1,0 +1,26 @@
+//이미지 삽입 반복
+$imageNames: (arrow, refresh);
+@each $imageName in $imageNames {
+  &.#{$imageName} {
+    @include bg(icon-#{$imageName}, right, center, 1.2rem);
+  }
+}
+
+//이미지 before 삽입 반복
+$imageNames: (temp, blood, heart, oxygen, walk, sleep);
+@each $imageName in $imageNames {
+  &.ic-#{$imageName}::before {
+    @include bg(icon-#{$imageName});
+  }
+}
+
+//이미지 삽입 반복 + index
+.ic-txt {
+  $imageNames: (diagnosis, pill, exercise);
+  @each $imageName in $imageNames {
+    $i: index($imageNames, $imageName);
+    &.#{$imageName} {
+      @include bg(icon-alarm-#{$i}, left, top, 2.2rem);
+    }
+  }
+}
