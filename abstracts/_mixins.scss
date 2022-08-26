@@ -68,3 +68,9 @@
   background: url('../img/#{$img-name}.png') no-repeat $x $y;
   background-size: $size auto;
 }
+
+//두 선택자 모두 대응@mixin unify-parent($child){
+@at-root #{selector-unify(&, $child)}{
+      @content;
+  }
+}
